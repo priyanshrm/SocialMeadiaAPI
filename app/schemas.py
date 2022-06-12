@@ -24,6 +24,14 @@ class UserRes(BaseModel):
     class Config:
         orm_mode = True
 
+
+class UserRes2(BaseModel):
+    username: str
+    date_joined: datetime
+
+    class Config:
+        orm_mode = True
+
 # REQUEST POST
 
 
@@ -42,10 +50,15 @@ class PostRes(BaseModel):
     id: int
     created_at: datetime
     usr_id: int
-    # user: UserResponse2
+    user: UserRes2
 
     class Config:
         orm_mode = True
+
+
+class PostRes2(BaseModel):
+    Post: PostRes
+    likes: int
 
 # REQUEST VOTE
 
